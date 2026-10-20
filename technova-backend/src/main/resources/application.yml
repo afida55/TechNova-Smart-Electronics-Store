@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: technova-shop
+  datasource:
+    # In Docker Compose, this host becomes "mysql" (the service name) - see docker-compose.yml
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/shop?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration-ms: 604800000   # 7 days
+
+logging:
+  level:
+    com.technova.shop: debug
+
+deepseek:
+  api-key: ${DEEPSEEK_API_KEY:}
+  model: deepseek-v4-flash
+  base-url: https://api.deepseek.com

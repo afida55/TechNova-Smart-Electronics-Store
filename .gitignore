@@ -1,0 +1,31 @@
+
+# Frontend
+node_modules/
+dist/
+
+# Backend
+target/
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+application-local.properties
+
+# IDE
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Frontend dependencies and build output
+technova-Front/node_modules/
+technova-Front/dist/
+
+# Backend generated files
+technova-backend/target/
